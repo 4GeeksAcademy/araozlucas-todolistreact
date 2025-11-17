@@ -26,17 +26,39 @@ export const Todolist = () => {
 
     return (
         <div className="container text-start">
-            <h1 className="text-center mt-10 quicksand-light text-danger display-1">todos</h1>
+            <h1 className="text-center mt-10 quicksand-light text-primary display-1">todos</h1>
             <div className="col-10 col-sm-8 col-md-6 col-lg-4 m-auto">
+                
+                {/* Form Agregar Tarea */}
                 <form onSubmit={handleSubmit}>
-                    <div className="container">
+                    <div className="container text-start mb-3 p-3 bg-body-tertiary rounded-3">
+                        <label htmlFor="exampleInputTask" className="form-label text-primary"><small>Add task</small></label>
+                        <input type="text" className="form-control mb-2" id="exampleTask" aria-describedby="emailHelp" placeholder="New task" 
+                        value={task} onChange={handleTask}/>            
+                    </div>
+                </form>
+
+                {/* Form Editar Tarea */}
+                <form >
+                    <div className="container p-3 bg-body-tertiary rounded-3">
+                        <div className="text-start mb-3">
+                            <label htmlFor="exampleInputTask" className="form-label text-primary"><small>Edit task</small></label>
+                            <input type="text" className="form-control mb-2" id="exampleTask" aria-describedby="emailHelp" placeholder="Pending"/>
+                        </div>
+                        <div className="text-start mb-3">
+                            <input type="checkbox" className="form-check-input me-2" id="checkDefault" value=""/>
+                            <label htmlFor="checkDefault" className="form-check-label text-dark"><small>Completed</small></label>
+                        </div>
+                        <div className="text-start">
+                            <button type="button" className="btn btn-primary me-2">Submit</button>
+                            <button type="button" className="btn btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <hr />
+                <h5 className="text-primary ms-2">List</h5>
                         <ul className="list-group">
-                            <li className="list-group-item">
-                                <label htmlFor="exampleInputTask" className="form-label"></label>
-                                <input type="text" className="form-control" id="exampleTask" aria-describedby="emailHelp" placeholder="New task" 
-                                value={task} onChange={handleTask}/>
-                            </li>                            
-                            
                            {toDos.map((item, index) => {
                                 return (
                                 <li key={index} className="hidden-icon list-group-item d-flex justify-content-between">
@@ -52,8 +74,6 @@ export const Todolist = () => {
                               <small><i> {toDos.length == 0 ? 'None' : toDos.length} pending items</i></small>
                             </li>
                         </ul>
-                    </div>
-                </form>
             </div>
         </div>
     );
