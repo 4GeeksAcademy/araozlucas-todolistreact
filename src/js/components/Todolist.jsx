@@ -28,6 +28,9 @@ export const Todolist = () => {
         console.log(dataToSend);
     };
 
+    const handleEditTask = () => {}
+    const handleEditCompleted = () => {}
+
     return (
         <div className="container text-start">
             <h1 className="text-center mt-10 quicksand-light text-primary display-1">todos</h1>
@@ -47,15 +50,15 @@ export const Todolist = () => {
                     <div className="container p-3 bg-body-tertiary rounded-3">
                         <div className="text-start mb-3">
                             <label htmlFor="exampleInputPassword" className="form-label text-primary"><small>Edit task</small></label>
-                            <input type="text" className="form-control mb-2" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Pending"/>
+                            <input type="text" className="form-control mb-2" id="exampleInputPassword" placeholder="Pending" value={editTask} onChange={handleEditTask}/>
                         </div>
                         <div className="text-start mb-3">
-                            <input type="checkbox" className="form-check-input me-2" id="checkDefault" value=""/>
+                            <input type="checkbox" className="form-check-input me-2" id="checkDefault" value="" checked={editCompleted} onChange={handleEditCompleted} />
                             <label htmlFor="checkDefault" className="form-check-label text-dark"><small>Completed</small></label>
                         </div>
                         <div className="text-start">
-                            <button type="button" className="btn btn-primary me-2">Submit</button>
-                            <button type="button" className="btn btn-secondary">Cancel</button>
+                            <button onClick="" type="button" className="btn btn-primary me-2">Submit</button>
+                            <button onClick="" type="button" className="btn btn-secondary">Cancel</button>
                         </div>
                     </div>
                 </form>
