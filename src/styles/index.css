@@ -9,3 +9,19 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.quicksand-light {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.hidden-icon > span {
+    visibility: hidden;
+}
+
+/* Muestra el icono cuando el cursor pase por encima del li */
+.hidden-icon:hover > span {
+    visibility: visible;
+}
